@@ -12,13 +12,26 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.0.1
+  flutter_bloc: ^8.0.1
   infinite_widgets: ^2.0.1
-  
+  retrofit: ^3.0.1+1
+  logger: ^1.1.0
+  json_annotation: ^4.6.0
+  cached_network_image: ^3.2.1
+  extended_image: ^6.2.1
+  gallery_saver: ^2.3.2
+  share_plus: ^4.0.10
+  flutter_cache_manager: ^3.3.0
+  dio: ^4.0.6
+  equatable: ^2.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  retrofit_generator: ^4.0.0
+  build_runner: ^2.2.0
+  json_serializable: ^6.3.1
 
 flutter:
   uses-material-design: true

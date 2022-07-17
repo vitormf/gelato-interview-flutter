@@ -7,12 +7,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gelato_photos/screens/main_screen.dart';
+import 'package:gelato_photos/screens/gallery_screen.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const PhotoListScreen());
+    await tester.pumpWidget(const GalleryScreen());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
