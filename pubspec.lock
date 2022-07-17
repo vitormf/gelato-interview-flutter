@@ -344,7 +344,7 @@ packages:
       name: infinite_widgets
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   io:
     dependency: transitive
     description:
@@ -589,7 +589,7 @@ packages:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.27.4"
+    version: "0.27.5"
   share_plus:
     dependency: "direct main"
     description:
