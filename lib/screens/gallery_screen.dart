@@ -84,10 +84,13 @@ class _GalleryCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Ink.image(
-      fit: BoxFit.fill,
-      image: CachedNetworkImageProvider(photo.thumbnail),
-      child: InkWell(onTap: () => openPhoto(context)),
+    return CachedNetworkImage(
+      imageUrl: photo.thumbnail,
+      placeholder: (ctx, url) => const Icon(Icons.photo, color: Colors.white),
+      imageBuilder: (ctx, imageProvider) => Ink.image(
+        image: imageProvider,
+        fit: BoxFit.fill,
+      ),
     );
   }
 

@@ -12,11 +12,9 @@ class PhotosViewModel extends ChangeNotifier {
   var cancelToken = CancelToken();
 
   int _page = 1;
-  static const _limit = 50;
+  static const _limit = 45;
 
-  PhotosViewModel(this.api) {
-    loadNext();
-  }
+  PhotosViewModel(this.api);
 
   List<Photo> get photos => _photos;
   bool get loading => _loading;
@@ -48,7 +46,6 @@ class PhotosViewModel extends ChangeNotifier {
     _error = false;
     _photos.clear();
     _page = 1;
-    loadNext();
   }
 
   void dismissError() {
