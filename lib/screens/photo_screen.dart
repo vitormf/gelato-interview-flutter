@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:gallery_saver/gallery_saver.dart';
 import 'package:share_plus/share_plus.dart';
@@ -46,7 +47,11 @@ class _PhotoScreenState extends State<PhotoScreen> {
     return Scaffold(
       appBar: fullscreen ? appBar : null,
       body: GestureDetector(
-        onTap: () => setState(() => fullscreen = !fullscreen),
+        onTap: () => setState(() {
+          fullscreen = !fullscreen;
+          final overlays = fullscreen ? SystemUiOverlay.values : <SystemUiOverlay>[];
+          SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: overlays);
+        }),
         child: SizedBox(
           height: double.infinity,
           width: double.infinity,
@@ -65,7 +70,9 @@ class _PhotoScreenState extends State<PhotoScreen> {
                 case LoadState.failed:
                   // TODO retry
                   return IconButton(
-                    onPressed: () => setState(() {}),
+                    onPressed: () => setState(() {
+                      state.reLoadImage();
+                    }),
                     icon: const Icon(Icons.refresh, color: Colors.white),
                   );
               }
